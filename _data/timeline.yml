@@ -1,17 +1,29 @@
-- title: Student, Harvard CS
-  from: 2014
-  to: 2018
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-- title: Software Engineer, Google, UK
-  from: 2018
+- title: Freelancing / Community QA and Dev
+  from: 2024
   to: present
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  description: For Suno, MediaWiki, Discord, and others. Being an active member of beta programs, reporting bugs and reviewing 
+                usability. Developing plugins, writing user guides, and a wiki's frontend.
+
+- title: QA Automation Engineer, NPAW, Barcelona
+  from: 2024
+  to: 2022
+  description: Kickstarting the Automatic QA team and project at NPAW, a streaming analytics suite. Researching
+                tools, designing and implementing the testing suite and regression
+                plan, managing Jenkins processes, and mentoring new team members. Our
+                work was focused on a webapp's frontend, testing both the browser and
+                the API in an agile environment.
+
+- title: IT Technician, MWC, Barcelona
+  from: Jan 2022
+  to: Mar 2022
+  description: Setting up the network infrastructure and providing customer support during Mobile World Congress.
+
+- title: DevOps/Testing Internship, BlackData, Barcelona
+  from: Jun 2019
+  to: Sep 2019
+  description: Planning out a testing plan, managing physical and virtual servers and setting up Microsoft Azure for server setup.
+
+- title: Degree in Software Engineering, laSalle URL, Barcelona
+  from: 2015
+  to: 2021
+  description: And CCNA1 Certification from Cisco

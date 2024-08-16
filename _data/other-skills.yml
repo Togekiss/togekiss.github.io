@@ -1,7 +1,19 @@
-- name: Adobe Photoshop
-  percentage: 95
-  color: info
-
-- name: Adobe Illustrator
+- name: Technical writing
   percentage: 90
   color: success
+
+- name: Jira management
+  percentage: 80
+  color: info
+
+- name: Test and project planning
+  percentage: 75
+  color: secondary
+
+- name: Software quality
+  percentage: 70
+  color: danger
+
+- name: Aesthetic sense
+  percentage: 75
+  color: warning

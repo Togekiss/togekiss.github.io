@@ -1,11 +1,23 @@
-- name: HTML5/CSS3
+- name: Python
   percentage: 90
   color: danger
 
-- name: Go
+- name: Java/JS/TS
   percentage: 80
-  color:
+  color: warning
 
-- name: Python
+- name: C/C++/C#
   percentage: 70
   color: secondary
+
+- name: HTML/CSS
+  percentage: 70
+  color: success
+
+- name: Selenium/Test scripting
+  percentage: 90
+  color: danger
+
+- name: Jenkins
+  percentage: 70
+  color: info
