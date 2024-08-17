@@ -172,14 +172,12 @@ Templates are **not** premade, so wiki admins have to *build them themselves.* T
 
 <br><br>
 
-#### Some can be as simple as...
-
-If an editor inserts this in the wikitext of their page...
-
-{% raw %}
-{{Template:Stub}}
-{% endraw %}
-
-It will generate this:
+#### Some can be as simple as notice banners...
 
 {% include elements/wikistub.html %}
+
+<br>
+
+#### ...Or as detailed as information boxes
+
+{% include elements/wikiinfobox.html %}

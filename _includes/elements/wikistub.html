@@ -1,19 +1,10 @@
 
-<table style="" class="ambox ambox-content">
-<tbody><tr>
-<td class="mbox-image"><span typeof="mw:File"><a href="/wiki/File:Twemoji_1f4dd.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Twemoji_1f4dd.svg" decoding="async" width="40" height="40" class="mw-file-element" data-file-width="512" data-file-height="512"></a></span>
-</td>
-<td style="" class="mbox-text">This article is a <b>stub.</b> You can help the wiki by expanding it!
-</td></tr>
-</tbody>
-</table>
-
 <!-- I know putting internal CSS here is not cool, will move it when I can -->
-
 <style>
-.ambox {
+table.ambox.ambox-content {
     --darker-grey: #614F51;
     --offwhite: #EEEEEE;
+    display: table;
     font-size: 16px;
     word-wrap: break-word;
     line-height: 1.35;
@@ -33,7 +24,12 @@
     box-shadow: 0 0 5px 3px #f28500A0;
 }
 
-.mbox-image {
+table.ambox.ambox-content td {
+    padding: 0;
+    border-width: 0;
+}
+
+table.ambox.ambox-content .mbox-image {
     border-spacing: 5px;
     border-collapse: separate;
     text-align: center;
@@ -42,4 +38,91 @@
     margin: 15px;
     white-space: nowrap;
 }
+
+table.ambox.ambox-content .mbox-image img {
+    margin: 0;
+}
+
+table.ambox.ambox-content .mbox-text {
+    width: auto; /* Fills the remaining space */
+    padding:5px;
+}
+
 </style>
+
+If an editor inserts this in the wikitext of their page...
+
+<pre>
+{% raw %}{{Template:Stub}}{% endraw %}
+</pre>
+
+It will generate this:
+
+<table class="ambox ambox-content">
+<tbody><tr>
+<td class="mbox-image"><span typeof="mw:File"><a href="/wiki/File:Twemoji_1f4dd.svg" class="mw-file-description"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Twemoji_1f4dd.svg" decoding="async" width="40" height="40" class="mw-file-element" data-file-width="512" data-file-height="512"></a></span>
+</td>
+<td class="mbox-text">This article is a <b>stub.</b> You can help the wiki by expanding it!
+</td></tr>
+</tbody>
+</table>
+<p class="text-center text-muted small">And hidden code to add the page to the Stubs category.</p>
+
+Internally, this calls upon another template `{% raw %}{{Template:MessageBox}}{% endraw %}` with its own settings. In turn, this template is 
+built with a wikitable filled with variables, and styled with `Template:MessageBox/styles.css`.
+
+<details>
+    <summary class="text-monospace">Template:Stub source code</summary>
+{% highlight markdown %}{% raw %}{{MessageBox
+    | type = content
+    | image = [[File:Twemoji 1f4dd.svg|40px]]
+    | text = This article is a '''stub.''' You can help the wiki by expanding it!
+}}
+{{#if:{{NAMESPACE}}||[[Category:Stubs]]}} {% endraw %}{% endhighlight %}
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:Stub" text="Template:Stub in the wiki" style="outline-primary" block="true" %} </p>
+</details>
+<details>
+    <summary class="text-monospace">Template:MessageBox source code</summary>
+{% highlight markdown %}{% raw %}<templatestyles src="MessageBox/styles.css" />
+{{{!}} style="{{{style|}}}" class="metadata plainlinks ambox {{#switch:{{{type|}}}
+    | serious  = ambox-serious
+    | content  = ambox-content
+    | style    = ambox-style
+    | move    = ambox-move
+    | notice   = ambox-notice
+    | locked = ambox-locked
+    | #default = ambox-notice
+}}"
+{{!}}-
+{{#ifeq:{{{image}}}|none
+    | <!-- no image cell -->
+    | <nowiki/>
+{{!}} class="mbox-image" {{!}} {{#switch:{{{image|{{{type|}}}}}}
+    | serious  = [[File:Octagon delete.svg|40px]]
+    | content  = [[File:Ambox important.svg|40px]]
+    | style    = [[File:Broom icon.svg|40px]]
+    | move    = [[File:Ambox move.svg|40px]]
+    | notice   = [[File:Info non-talk.svg|40px]]
+    | locked = [[File:Ambox padlock gray.svg|40px]]
+    | blank    = <!-- empty image cell -->
+    | #default = {{{image|[[File:Info non-talk.svg|40px]]}}}
+    }}
+}}
+{{!}} style="{{{textstyle|}}}" class="mbox-text" {{!}} {{{text}}}
+{{#if:{{{imageright|}}}| <nowiki/>
+{{!}} class="mbox-imageright" {{!}} {{#switch:{{{imageright|{{{type|}}}}}}
+    | serious  = [[File:Octagon delete.svg|40px]]
+    | content  = [[File:Ambox important.svg|40px]]
+    | style    = [[File:Broom icon.svg|40px]]
+    | move    = [[File:Ambox move.svg|40px]]
+    | notice   = [[File:Info non-talk.svg|40px]]
+    | locked = [[File:Ambox padlock gray.svg|40px]]
+    | blank    = <!-- empty image cell -->
+    | #default = {{{imageright|}}}
+    }}
+}}
+{{!}}-
+{{!}}}{% endraw %}{% endhighlight %}
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox" text="Template:MessageBox in the wiki" style="outline-primary" block="true" %} </p>
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox/styles.css" text="Template:MessageBox/styles.css in the wiki" style="outline-primary" block="true" %} </p>
+</details>
