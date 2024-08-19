@@ -1,8 +1,317 @@
-<style>
+<aside class="portable-infobox">
+  <h2 class="pi-item pi-item-spacing pi-title" data-source="title">EntityInfobox</h2>
+  <figure class="pi-item pi-media pi-image" data-source="image">
+    <img src="/assets/img/hissyicon.png" class="pi-image-thumbnail" alt="" width="256" height="256">
+  </figure>
+  <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="type">
+    <h3 class="pi-data-label pi-secondary-font"><b>Type</b></h3>
+    <div class="pi-data-value pi-font">Pet</div>
+  </div>
+  <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="species">
+    <h3 class="pi-data-label pi-secondary-font"><b>Species</b></h3>
+    <div class="pi-data-value pi-font">Hognose snake</div>
+  </div>
+  <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="role">
+    <h3 class="pi-data-label pi-secondary-font"><b>Role</b></h3>
+    <div class="pi-data-value pi-font">Guardian of the snake pit</div>
+  </div>
+  <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="owner">
+    <h3 class="pi-data-label pi-secondary-font"><b>Owner</b></h3>
+    <div class="pi-data-value pi-font"><a href="/wiki/Alrick_Rosenfeld" title="Alrick Rosenfeld">Alrick Rosenfeld</a>
+      <p><a href="/wiki/Elise_Rosenberg" class="new"
+          title="Elise Rosenberg (page does not exist)">Elise Rosenberg</a></p>
+    </div>
+  </div>
+  <section class="pi-item pi-group pi-border-color pi-collapse pi-collapse-closed">
+    <h2 class="pi-item pi-header pi-item-spacing pi-secondary-background">Personal Information</h2>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="gender">
+      <h3 class="pi-data-label pi-secondary-font"><b>Gender</b></h3>
+      <div class="pi-data-value pi-font">Male</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="age">
+      <h3 class="pi-data-label pi-secondary-font"><b>Age</b></h3>
+      <div class="pi-data-value pi-font">1 year and a half</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="birthday">
+      <h3 class="pi-data-label pi-secondary-font"><b>Birthday</b></h3>
+      <div class="pi-data-value pi-font">January 2024</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="origin">
+      <h3 class="pi-data-label pi-secondary-font"><b>Origin</b></h3>
+      <div class="pi-data-value pi-font">Captive bred</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="height">
+      <h3 class="pi-data-label pi-secondary-font"><b>Height</b></h3>
+      <div class="pi-data-value pi-font">23cm (9 in)</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="favorite food">
+      <h3 class="pi-data-label pi-secondary-font"><b>Favorite food</b></h3>
+      <div class="pi-data-value pi-font">Frogs</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="hobbies">
+      <h3 class="pi-data-label pi-secondary-font"><b>Hobbies</b></h3>
+      <div class="pi-data-value pi-font">Burrowing, sitting on warm rocks</div>
+    </div>
+    <div class="pi-item pi-data pi-item-spacing pi-border-color" data-source="aka">
+      <h3 class="pi-data-label pi-secondary-font"><b>Also Known As</b></h3>
+      <div class="pi-data-value pi-font">Young Master <small>(by <a href="/wiki/Lucien_Deimos?action=edit&amp;redlink=1"
+            class="new" title="Lucien Deimos (page does not exist)">Lucien</a>)</small></div>
+    </div>
+  </section>
+</aside>
 
-</style>
+**Infoboxes** are a staple of all wikis: Tables that float on the right of the page and
+show a basic summary of the information of the article.
 
-**Infoboxes** are a staple of all wikis: The tables that float on the right of the page and
- show a basic summary of the information of the article.
+{% highlight markdown %}{% raw %}{{EntityInfobox
+| image = <gallery>
+  Hissy icon.png
+</gallery>
+| type = Pet
+| species = Hognose snake
+| role = Guardian of the snake pit
+| owner = [[Alrick Rosenfeld]]
+[[Elise Rosenberg]]
+| gender = Male
+| age = 1 year and a half
+| birthday = January 2024
+| origin = Captive bred
+| height = 23cm (9 in)
+| favorite food = Frogs
+| hobbies = Burrowing, sitting on warm rocks
+| aka = Young Master <small>(by [[Lucien Deimos|Lucien]])</small>
+}} {% endraw %}{% endhighlight %}
 
- 
+Using them requires a little bit more of how-to from Wiki editors. Since my users are young writers, not developers,
+I have built these templates making them as easy to use as possible without sacrificing features.
+
+To achieve this, the extension **TemplateData** allows me to build an interactive form that editors can fill when using
+the View Editor; and renders a detailed table listing the fields in the documentation. With this I can fill the form
+with
+instructions, examples, and even predefined sets of options for editors to choose with a dropdown.
+
+<details>
+  <summary class="text-monospace">Template:LocationInfobox template data</summary>
+  {% highlight markdown %}{% raw %}<templatedata>
+    {
+    "description": "Side box for basic information about a location. Fields with [C] add the page to different
+    categories!",
+    "paramOrder": [
+    "title",
+    "image",
+    "area",
+    "subarea",
+    "type",
+    "owner"
+    ],
+    "format": "block",
+    "params": {
+    "title": {
+    "label": "Title",
+    "description": "Title of the infobox. Leave empty to match the page name",
+    "type": "string"
+    },
+    "image": {
+    "label": "Image",
+    "description": "NOTE: You'll have to use 'insert image' separately to upload the file to the Wiki. If using more
+    than one, use the example to insert the image with its label:",
+    "example": "<gallery> ↵\n Example.jpg | Entrance ↵\n Example-2.jpg | At night ↵\n</gallery>",
+    "type": "content",
+    "suggested": true
+    },
+    "area": {
+    "label": "[C] Area",
+    "description": "Broad area where this location is situated in. DO NOT EDIT THESE OPTIONS. Kaminashi's outskirts
+    still count as Kaminashi",
+    "example": "Kaminashi",
+    "type": "string",
+    "suggestedvalues": [
+    "[[Kaminashi]]",
+    "[[Ryoutei Twilight University]]",
+    "[[Makai]]",
+    "Japan",
+    "Human world"
+    ],
+    "required": true,
+    "suggested": true
+    },
+    "subarea": {
+    "label": "Subarea",
+    "description": "Specific place within the area it's located in. The options in the drop-down are suggestions, you
+    can type a new one too",
+    "example": "Outskirts",
+    "type": "string",
+    "suggestedvalues": [
+    "Outskirts",
+    "Commercial district",
+    "Residential district",
+    "Red light district",
+    "Ryoutei Twilight University campus",
+    "Vampire kingdom"
+    ],
+    "suggested": true
+    },
+    "type": {
+    "label": "[C] Type",
+    "description": "Type of location. If it's a city, a residence, a shop...",
+    "example": "University campus",
+    "type": "string",
+    "suggestedvalues": [
+    "Residence",
+    "Business",
+    "University campus",
+    "Public space",
+    "Natural location",
+    "City",
+    "District",
+    "Country"
+    ],
+    "required": true,
+    "suggested": true
+    },
+    "owner": {
+    "label": "Owner",
+    "description": "If it's a residence or business, who owns or lives there. If a business owner is a nameless NPC,
+    there's no need to fill this field. Use this notation to link to the character's page",
+    "example": "[[Janitor]]",
+    "type": "string",
+    "suggested": true
+    }
+    }
+    }
+  </templatedata>{% endraw %}{% endhighlight %}
+  <p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html
+    link="https://dlelysium.miraheze.org/wiki/Template:LocationInfobox" text="See Template:LocationInfobox in the wiki"
+    style="outline-primary" block="true" %} </p>
+</details>
+
+<br>
+
+Also in the spirit of ease-of-use and minimizing user input, each Infobox comes with a hidden script that automatically
+adds category tag to the page, depending on what editors filled the infobox with. `if` and `switch` statements are
+bundled with
+MediaWiki, but `StringContains` is a Lua module I added myself
+[here](https://dlelysium.miraheze.org/wiki/Module:StringContains).
+
+<details>
+  <summary class="text-monospace">Template:CharacterInfobox category sorting</summary>
+  {% highlight markdown %}{% raw %}{{#if:{{NAMESPACE}}||<!--
+  -->{{#switch:{{{status|}}}
+  |Active=[[Category:Active characters]]
+  |Active (NPC)=[[Category:Active characters]][[Category:NPCs]]
+  |Inactive=[[Category:Inactive characters]]
+  |Inactive (NPC)=[[Category:Inactive characters]][[Category:NPCs]]
+  |Deceased=[[Category:Inactive characters]]
+  |Retired=[[Category:Inactive characters]]
+  }}<!--
+  -->{{#invoke:StringContains|contains|{{{origin|}}}|original|[[Category:Original characters]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{origin|}}}|canon|[[Category:Canon characters]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|human|[[Category:Humans]]|[[Category:All demons]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|vampire|[[Category:Vampires]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|vibora|[[Category:Vibora]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|wolf|[[Category:Wolves]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|adler|[[Category:Adlers]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|ghoul|[[Category:Ghouls]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|founder|[[Category:Founders]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|familiar|[[Category:Advanced familiars]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|turned|[[Category:Turned demons]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|impure|[[Category:Turned demons]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|lesser|[[Category:Turned demons]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|werewolf|[[Category:Turned demons]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|kinwing|[[Category:Turned demons]][[Category:Adlers]]}}<!--
+  -->{{#invoke:StringContains|contains|{{{species|}}}|hybrid|[[Category:Hybrids]]}}<!--
+  -->{{#switch:{{{gender|}}}
+  |Male=[[Category:Male characters]]
+  |male=[[Category:Male characters]]
+  |Female=[[Category:Female characters]]
+  |female=[[Category:Female characters]]
+  |#default=[[Category:Genderqueer characters]]
+  }}<!--hu
+  -->{{#switch:{{{role|}}}
+  |Noble=[[Category:Nobles]]
+  |Hunter=[[Category:Hunters]]
+  |#default=[[Category:Civilians]]
+  }}<!--
+  -->{{#switch:{{{school|}}}
+  |Student=[[Category:University students]]
+  |Staff=[[Category:Campus staff]]
+  |#default=[[Category:Non-university members]]
+  }}}}
+  {% endraw %}{% endhighlight %}
+  <p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html
+    link="https://dlelysium.miraheze.org/wiki/Template:CharacterInfobox" text="See Template:CharacterInfobox in the
+    wiki" style="outline-primary" block="true" %} </p>
+</details>
+
+<br>
+
+All of this, of course, to fill the namely Infobox proper. Although each Infobox corresponding to a broad category uses
+a
+different template, all of them pull their style from a common CSS file.
+
+<details>
+  <summary class="text-monospace">Template:EntityInfobox source code</summary>
+  {% highlight markdown %}{% raw %}
+  <templatestyles src="Infobox/styles.css" />
+  <infobox>
+    <title source="title">
+      <default>{{PAGENAME}}</default>
+    </title>
+    <image source="image">
+      <caption source="caption1" />
+    </image>
+    <data source="type">
+      <label>'''Type'''</label>
+    </data>
+    <data source="species">
+      <label>'''Species'''</label>
+    </data>
+    <data source="role">
+      <label>'''Role'''</label>
+    </data>
+    <data source="owner">
+      <label>'''Owner'''</label>
+    </data>
+    <group collapse="closed">
+      <header>Personal Information</header>
+      <data source="gender">
+        <label>'''Gender'''</label>
+      </data>
+      <data source="age">
+        <label>'''Age'''</label>
+      </data>
+      <data source="birthday">
+        <label>'''Birthday'''</label>
+      </data>
+      <data source="origin">
+        <label>'''Origin'''</label>
+      </data>
+      <data source="height">
+        <label>'''Height'''</label>
+        <format>{{#tag:nowiki|{{{height}}}}}</format>
+      </data>
+      <data source="weight">
+        <label>'''Weight'''</label>
+      </data>
+      <data source="favorite food">
+        <label>'''Favorite food'''</label>
+      </data>
+      <data source="hobbies">
+        <label>'''Hobbies'''</label>
+      </data>
+      <data source="aka">
+        <label>'''Also Known As'''</label>
+      </data>
+    </group>
+  </infobox>
+  {% endraw %}{% endhighlight %}
+  <p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html
+    link="https://dlelysium.miraheze.org/wiki/Template:EntityInfobox" text="See Template:EntityInfobox in the wiki"
+    style="outline-primary" block="true" %} </p>
+  <p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html
+    link="https://dlelysium.miraheze.org/wiki/Template:Infobox/styles.css" text="See Template:Infobox/styles.css in the
+    wiki" style="outline-primary" block="true" %} </p>
+</details>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/wikiinfobox.js"></script>

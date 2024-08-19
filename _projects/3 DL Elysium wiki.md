@@ -178,6 +178,6 @@ Templates are **not** premade, so wiki admins have to *build them themselves.* T
 
 <br>
 
-#### ...Or as detailed as information boxes
+#### ...Or as elaborate as information boxes
 
 {% include elements/wikiinfobox.html %}

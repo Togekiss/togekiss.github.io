@@ -1,55 +1,3 @@
-
-<!-- I know putting internal CSS here is not cool, will move it when I can -->
-<style>
-table.ambox.ambox-content {
-    --darker-grey: #614F51;
-    --offwhite: #EEEEEE;
-    display: table;
-    font-size: 16px;
-    word-wrap: break-word;
-    line-height: 1.35;
-    direction: ltr;
-    background: var(--offwhite);
-    color: var(--darker-grey);
-    border-radius: 10px;
-    width: auto;
-    max-width: 80%;
-    min-width: 30%;
-    margin: 5px auto 10px auto;
-    border-spacing: 5px;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-align: center;
-    vertical-align: middle;
-    box-shadow: 0 0 5px 3px #f28500A0;
-}
-
-table.ambox.ambox-content td {
-    padding: 0;
-    border-width: 0;
-}
-
-table.ambox.ambox-content .mbox-image {
-    border-spacing: 5px;
-    border-collapse: separate;
-    text-align: center;
-    padding: 0;
-    line-height: 1;
-    margin: 15px;
-    white-space: nowrap;
-}
-
-table.ambox.ambox-content .mbox-image img {
-    margin: 0;
-}
-
-table.ambox.ambox-content .mbox-text {
-    width: auto; /* Fills the remaining space */
-    padding:5px;
-}
-
-</style>
-
 If an editor inserts this in the wikitext of their page...
 
 <pre>
@@ -79,7 +27,7 @@ built with a wikitable filled with variables, and styled with `Template:MessageB
     | text = This article is a '''stub.''' You can help the wiki by expanding it!
 }}
 {{#if:{{NAMESPACE}}||[[Category:Stubs]]}} {% endraw %}{% endhighlight %}
-<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:Stub" text="Template:Stub in the wiki" style="outline-primary" block="true" %} </p>
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:Stub" text="See Template:Stub in the wiki" style="outline-primary" block="true" %} </p>
 </details>
 <details>
     <summary class="text-monospace">Template:MessageBox source code</summary>
@@ -123,6 +71,6 @@ built with a wikitable filled with variables, and styled with `Template:MessageB
 }}
 {{!}}-
 {{!}}}{% endraw %}{% endhighlight %}
-<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox" text="Template:MessageBox in the wiki" style="outline-primary" block="true" %} </p>
-<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox/styles.css" text="Template:MessageBox/styles.css in the wiki" style="outline-primary" block="true" %} </p>
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox" text="See Template:MessageBox in the wiki" style="outline-primary" block="true" %} </p>
+<p style="width:75%;margin-right:auto;margin-left:auto;"> {% include elements/button.html link="https://dlelysium.miraheze.org/wiki/Template:MessageBox/styles.css" text="See Template:MessageBox/styles.css in the wiki" style="outline-primary" block="true" %} </p>
 </details>
