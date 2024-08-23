@@ -1,5 +1,5 @@
 - name: Python
-  percentage: 90
+  percentage: 85
   color: danger
 
 - name: Java/JS/TS
@@ -19,5 +19,5 @@
   color: danger
 
 - name: Jenkins
-  percentage: 70
+  percentage: 80
   color: info
