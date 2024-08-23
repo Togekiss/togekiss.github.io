@@ -23,6 +23,13 @@ $text-light: white;
 $link-light: #EEEEEE;
 $pi-background: #f8f9fa;
 
+
+/* theme codeblocks */
+
+.highlight pre {
+  text-wrap: wrap;
+}
+
 /* wikiinfobox */
 
 .portable-infobox {

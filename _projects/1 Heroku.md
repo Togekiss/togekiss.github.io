@@ -11,7 +11,7 @@ I have developed several demos and prototypes of websites and applications over 
 
 So, after a brief research, I settled on **Heroku** to host a couple of full-stack demos. It's cheap, offers a nice integration with Github, and can host full-stack websites.
 
-The demos I have hosted, for now, are just that: old prototypes that I have patched up back into being online. Take this project as proof of adaptability and learning speed, more than about the demos themselves.
+The demos I have hosted, for now, are just that: old prototypes that I have patched up back into being online. Take this project as proof of *adaptability and learning speed,* more than about the demos themselves.
 
 <br>
 

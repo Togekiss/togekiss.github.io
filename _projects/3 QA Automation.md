@@ -9,8 +9,10 @@ description: NDA-compliant showcase of my skills as a QA Automation Engineer.
 
 NDAs are great, but they also mean there's no easy way to showcase your hard work to other people.
 
+However, I will try to look for examples I can safely modify to post snippets here.
+
 Things to talk about in this page:
-* Selenium and TestCafé scripting, obviously
+* Selenium and TestCafé scripting
 * API testing and frontend calls debugging
 * Detailed internal documentation in Confluence
 * Jira bug reporting and automatic integration

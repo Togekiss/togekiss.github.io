@@ -1,12 +1,21 @@
 ---
 name: DL:Elysium wiki
 tools: [MediaWiki, HTML, CSS, Writing]
-image: https://dlelysium.miraheze.org/w/thumb_handler.php/b/ba/Demon_emblems.png/300px-Demon_emblems.png
+image: /assets/img/elysium.png
 description: I'm making an entire wiki for a collaborative writing group. This includes skin and widget coding, guide and content writing, and user management.
 external-url: https://dlelysium.miraheze.org/wiki/Main_Page
 ---
 
 # The Book of DL:Elysium
+
+{% capture list_items %}
+Public pages, #if-you-want-to-check-it-out
+The hosting site, #the-hosting-site
+Theme and CSS, #site-theme-and-commoncss
+Templates and widgets, #templates-mediawikis-widgets-and-more
+Helping improve the software, #helping-improve-the-software
+{% endcapture %}
+{% include elements/list.html title="Table of Contents" %}
 
 My current passion project. I have been participating, moderating and managing a collaborative writing (also known as roleplay, or RP) server on Discord for nearly two years.
 
@@ -181,3 +190,22 @@ Templates are **not** premade, so wiki admins have to *build them themselves.* T
 #### ...Or as elaborate as information boxes
 
 {% include elements/wikiinfobox.html %}
+
+<br>
+
+***
+
+## Helping improve the software
+
+As I worked on the wiki, I often bumped against the same wall: I was looking to enable features that did not exist.
+
+Before reinventing the wheel, I searched through all available settings and extensions. Finding no results, I wondered if I had to add Lua modules or JS code myself. An extensive search in discussion forums and asking on developer Discord servers told me those features were not only not included- but apparently, no one had implemented them for their own site before. Or barely thought about it...
+
+One was a real overseeing from mediaWiki developers, and was patched up after a bug report and some testing I helped with.
+
+Another one was an application of an extension the developers didn't think of before. I could have coded it myself, but the dev offered to add it to the source code of the extension themselves, to make the improvement available to everyone.
+
+A [third one](https://dlelysium.miraheze.org/wiki/Help:Editing_an_Infobox) is a glaring bug that plagues the Visual Editor- and since most developers use the Source Editor, it has been brushed aside. I plan to code a JS fix myself, but for now, I left instructions for my users on how to avoid it.
+
+The [fourth one](https://dlelysium.miraheze.org/wiki/Template:CategoryGallery) is a completely new feature. I coded it myself and I plan to submit it as an extension once I test it more extensively, and I make sure it's robust.
+
