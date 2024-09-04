@@ -26,4 +26,4 @@ And I'm itching to make this theme my own. As days go by and I work on it, I'll 
 * Align better these small in-line code snippets.
 * ~~Add word wrapping to large code blocks~~ Done!
 * Add more spacing between the page title and the content.
-* Add mobile-specific styles to the Wiki widgets
+* Add mobile-specific styles to the Wiki widgets in [the project page](/projects/4-dl-elysium-wiki)

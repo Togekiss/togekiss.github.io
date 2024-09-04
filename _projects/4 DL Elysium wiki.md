@@ -3,7 +3,7 @@ name: DL:Elysium wiki
 tools: [MediaWiki, HTML, CSS, Writing]
 image: /assets/img/elysium.png
 description: I'm making an entire wiki for a collaborative writing group. This includes skin and widget coding, guide and content writing, and user management.
-external-url: https://dlelysium.miraheze.org/wiki/Main_Page
+external_url: https://dlelysium.miraheze.org/wiki/Main_Page
 ---
 
 # The Book of DL:Elysium
