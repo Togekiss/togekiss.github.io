@@ -1,0 +1,42 @@
+- name: Test scripting (Selenium and TestCafé)
+  percentage: 80
+  color: primary
+
+- name: API testing and frontend call debugging
+  percentage: 40
+  color: primary
+
+- name: Visual testing (Python)
+  percentage: 50
+  color: primary
+
+- name: Frontend development (HTML, JS)
+  percentage: 20
+  color: primary
+
+- name: CI/CD Pipelines (Jenkins)
+  percentage: 80
+  color: success
+
+- name: Bug reporting and task logging (Jira)
+  percentage: 60
+  color: success
+
+- name: Internal documentation (Confluence)
+  percentage: 80
+  color: success
+
+- name: Code analysis (SonarQube)
+  percentage: 20
+  color: success
+
+- name: Project design and planning
+  percentage: 90
+  color: info
+
+- name: Team managing and training
+  percentage: 70
+  color: info
+
+
+
