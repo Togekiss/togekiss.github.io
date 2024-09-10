@@ -1,5 +1,5 @@
 - name: Test scripting (Selenium and TestCafé)
-  percentage: 80
+  percentage: 90
   color: primary
 
 - name: API testing and frontend call debugging
